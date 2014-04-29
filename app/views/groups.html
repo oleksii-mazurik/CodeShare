@@ -1,0 +1,91 @@
+<section>
+
+
+    <div class="text-center" data-bind="visible: hasProgress">
+
+        <div id="loading-group">
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <div data-bind="visible: !hasProgress()">
+
+
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>
+                        <strong>#</strong>
+                    </td>
+                    <td>
+                        <strong>Group name</strong>
+                    </td>
+                    <td>
+                        <strong>Group id</strong>
+                    </td>
+                    <td>
+                        <strong>Status</strong>
+                    </td>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: groups">
+                <tr>
+                    <td>
+                        <span data-bind="text: $index() + 1"></span>
+                    </td>
+                    <td>
+                        <a data-bind="attr: { href: '#group/' + groupID }"><span data-bind="text: groupName"></span></a>
+                    </td>
+                    <td>
+                        <span data-bind="text: groupID"></span>
+                    </td>
+                    <td>PUBLIC</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="text-center">
+        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">Add new group</button>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form data-bind="submit: addGroup">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">New group</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="content">
+                                <div class="form-group form-horizontal">
+                                    <label for="name" class="control-label col-sm-2">Name</label>
+                                    <div class="col-sm-10">
+                                        <input id="name" type="text" class="form-control input-sm" data-bind="value: groupToAdd, valueUpdate: 'afterkeydown'" required="" />
+                                    </div>
+                                </div>
+                            <hr/>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+</section>

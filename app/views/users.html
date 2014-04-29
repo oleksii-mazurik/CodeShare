@@ -1,0 +1,40 @@
+<section>
+
+    <div>
+        <h1>Getting users:</h1>
+        <hr/>
+    </div>
+
+    <button class="btn btn-default" data-bind="click: getUsers">Get Users</button>
+
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+                <td>
+                    User ID
+                </td>
+                <td>
+                    Username
+                </td>
+                <td>
+                    E-mail
+                </td>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: users">
+            <tr>
+                <td>
+                    <span data-bind="text: userID"></span>
+                </td>
+                <td>
+                    <span data-bind="text: username"></span>
+                </td>
+                <td>
+                    <span data-bind="text: email"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</section>

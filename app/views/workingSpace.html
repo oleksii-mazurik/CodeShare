@@ -1,0 +1,72 @@
+<section>
+   <div class="row">
+       <div class="col-md-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <strong>Group name</strong>
+                    <br/>
+                    <span data-bind="text: groupName"></span>
+                </div>
+                <div class="panel-body">
+                    <p>
+                        <strong>Users:</strong>
+                        <span data-bind="text: groupUsers().length"></span>
+                    </p>
+                    <div class="form-group">
+                        <button class="btn btn-default" data-bind="click: reloadPage"><span class="glyphicon-refresh glyphicon"></span>Refresh</button>
+                    </div>
+                    <a href="#" data-bind="attr: { href: '#groups' }">
+                        Back to groups
+                    </a>
+                </div>
+            </div>
+       </div>
+       <div class="col-md-8">
+           <form data-bind="submit: addCodeBlock">
+
+               <div class="form-group form-horizontal" >
+                   <div class="row">
+                       <label  for='codeName' class="col-md-1 control-label">
+                           Name:
+                       </label>
+                       <div class="col-md-5">
+                           <input id="codeName" class="form-control" placeholder="Type a name..." required="" data-bind="value: codeBlockName, valueUpdate: 'afterkeydown'"/>
+                       </div>
+                   </div>
+               </div>
+               <div class="form-group">
+                   <textarea class="form-control" rows="4" placeholder="Type here..." data-bind="value: code, valueUpdate: 'afterkeydown'" required=""></textarea>
+               </div>
+               <div class="form-group">
+                   <div class="row">
+                       <div class="col-md-offset-10 col-md-2 text-right">
+                           <button class="btn-primary btn">Submit</button>
+                       </div>
+                   </div>
+               </div>
+               <div id="codes">
+
+
+
+
+               </div>
+           </form>
+       </div>
+       <div class="col-md-2">
+           <div class="panel panel-info">
+               <div class="panel-heading">
+                   Users
+               </div>
+               <div class="panel-body">
+                   <ul data-bind="foreach: groupUsers" class="list-group">
+                       <li class="list-group-item">
+                           <span data-bind="text: $data.username"></span>
+                           <span>Ready:</span>
+                           <input type="checkbox" name="my-checkbox" checked>
+                       </li>
+                   </ul>
+               </div>
+           </div>
+       </div>
+   </div>
+</section>

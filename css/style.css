@@ -1,0 +1,54 @@
+.signInDiv {
+    text-align: left;
+}
+
+
+
+.mainPage {
+    background-image: url('../img/codes.jpg');
+    margin: 0;
+    width: 100%;
+    padding-top: 20%;
+    height: 628px;
+    text-align: center;
+    float: left;
+    color: #ffffff;
+}
+
+.footerMain {
+    line-height: 40px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.controlCode {
+    text-align: right;
+}
+
+.loadingContainer {
+    margin-top: 30px;
+    width: 400px;
+}
+
+
+#loading {
+    position:absolute;
+    background: url('../img/loader.gif') no-repeat center ;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+}
+
+#loading-group {
+    position: relative;
+    display: inline-block;
+    background: url('../img/loader.gif') no-repeat center;
+    width: 100px;
+    height: 100px;
+}
+
+/*.container-data {*/
+    /*margin-top: 50px;*/
+/*}*/
+
